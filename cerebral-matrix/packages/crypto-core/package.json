@@ -1,0 +1,7 @@
+{
+  "name": "@matrix/crypto-core",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "PQC crypto provider interface \u2014 ML-KEM-768, ML-DSA-65, SLH-DSA-SHA2-128s"
+}

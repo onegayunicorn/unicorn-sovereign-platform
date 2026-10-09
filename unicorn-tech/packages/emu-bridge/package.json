@@ -1,0 +1,7 @@
+{
+  "name": "@unicorn-tech/emu-bridge",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "N03 Emu-Verse bridge"
+}

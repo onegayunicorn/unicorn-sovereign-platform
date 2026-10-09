@@ -1,0 +1,6 @@
+{
+  "name": "@unicorndrop/https-gateway",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Upload links, signed URLs, resumable sessions"
+}

@@ -1,0 +1,25 @@
+{
+  "name": "unicorn-sovereign-platform",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "cerebral-matrix/packages/*",
+    "unicorn-quantum/packages/*",
+    "unicorn-cloud/packages/*",
+    "unicorn-tech/packages/*",
+    "npc-sandbox/packages/*"
+  ],
+  "scripts": {
+    "dev": "docker compose up",
+    "test": "npm run test --workspaces",
+    "build": "npm run build --workspaces",
+    "validate": "node scripts/validate-all.mjs",
+    "push:ready": "git add . && git commit -m 'unicorn v1.0'"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.0",
+    "typescript": "^5.6.0",
+    "@types/node": "^22.7.0",
+    "zod": "^3.23.0"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "@unicorn-tech/shield-bridge",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "N01 Shield Hub bridge (mock/real env-gated)"
+}

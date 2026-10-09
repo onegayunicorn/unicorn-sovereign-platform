@@ -1,0 +1,18 @@
+name: Phi5 CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: "20"}
+      - run: npm ci
+      - run: npm test
+      - name: Schema validation
+        run: |
+          for f in unicorn-tech/schemas/*.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8')); console.log('OK: $f')"
+          done
+      - name: Mock endpoint tests
+        run: npx vitest run packages/*/src/mock.test.ts

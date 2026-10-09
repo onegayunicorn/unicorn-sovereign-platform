@@ -1,0 +1,7 @@
+{
+  "name": "@matrix/quantum-simulator",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "Local WASM circuit simulator \u2014 runs fully offline"
+}

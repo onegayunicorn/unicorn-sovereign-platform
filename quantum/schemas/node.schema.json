@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Node",
+  "type": "object",
+  "required": [
+    "node_id",
+    "region",
+    "physical_location",
+    "firmware_version",
+    "operator_identity",
+    "status"
+  ],
+  "properties": {
+    "node_id": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "physical_location": {
+      "type": "string"
+    },
+    "firmware_version": {
+      "type": "string"
+    },
+    "operator_identity": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "provisioning",
+        "enrolled",
+        "online",
+        "maintenance",
+        "offline",
+        "decommissioned"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

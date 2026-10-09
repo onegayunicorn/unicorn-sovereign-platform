@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TelemetrySnapshot",
+  "type": "object",
+  "required": [
+    "timestamp",
+    "source",
+    "metrics",
+    "classification"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "number"
+    },
+    "source": {
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object"
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "Demonstrated",
+        "Prototype",
+        "Simulated",
+        "Reported",
+        "Proposed"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

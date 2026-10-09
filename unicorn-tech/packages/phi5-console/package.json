@@ -1,0 +1,6 @@
+{
+  "name": "@unicorn-tech/phi5-console",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Unified Phi^5 control plane dashboard"
+}

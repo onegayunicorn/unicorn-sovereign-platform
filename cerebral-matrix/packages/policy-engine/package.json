@@ -1,0 +1,7 @@
+{
+  "name": "@matrix/policy-engine",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "Permission + network rules \u2014 zero-trust policy evaluation"
+}

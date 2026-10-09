@@ -1,0 +1,7 @@
+{
+  "name": "@unicorndrop/tenants",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "Tenant lifecycle, quotas, feature flags"
+}

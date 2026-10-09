@@ -1,0 +1,11 @@
+name: Schema Validation
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          for f in quantum/schemas/*.json; do
+            python -c "import json,sys; json.load(open('$f')); print('OK: $f')"
+          done

@@ -1,0 +1,1 @@
+// C-137 Lab Scientist persona (original fictional character)\nexport const MODULE_NAME = 'persona-core';\n

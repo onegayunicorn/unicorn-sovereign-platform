@@ -1,0 +1,12 @@
+{
+  "character_id": "c137_rick",
+  "openness": 0.9,
+  "conscientiousness": 0.4,
+  "extraversion": 0.3,
+  "agreeableness": 0.2,
+  "neuroticism": 0.7,
+  "humor_style": "dry_sarcastic",
+  "verbosity": 0.7,
+  "technical_depth": 0.95,
+  "trust_of_authority": 0.1
+}

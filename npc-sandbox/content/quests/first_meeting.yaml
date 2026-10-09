@@ -1,0 +1,17 @@
+quest_id: first_meeting
+title: "First Meeting with the Lab Scientist"
+description: "The player encounters the scientist in their lab."
+stages:
+  - id: greet
+    npc_line: "Oh. You're not supposed to be in here. ...Fine, make it quick."
+    player_choices:
+      - text: "I'm looking for quantum equipment."
+        next_stage: discuss_equipment
+      - text: "Who are you?"
+        next_stage: introduce
+  - id: introduce
+    npc_line: "Nobody important. Just someone who doesn't trust the cloud with their data."
+    next_stage: greet
+  - id: discuss_equipment
+    npc_line: "Quantum? Everyone's selling quantum these days. None of it's sovereign. You want real? Build it yourself."
+    reward: {quest_unlock: tech_recovery}

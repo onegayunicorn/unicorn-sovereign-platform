@@ -1,0 +1,1 @@
+// Local WASM circuit simulator — runs fully offline\nexport const MODULE_NAME = 'quantum-simulator';\n

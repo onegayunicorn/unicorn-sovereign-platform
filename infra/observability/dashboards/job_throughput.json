@@ -1,0 +1,20 @@
+{
+  "dashboard": {
+    "title": "Job Throughput Dashboard",
+    "uid": "job_throughput",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Job throughput dashboard",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "unicorn_job_throughput_total"
+          }
+        ]
+      }
+    ],
+    "schemaVersion": 39,
+    "version": 1
+  }
+}

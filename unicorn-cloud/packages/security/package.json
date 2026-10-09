@@ -1,0 +1,7 @@
+{
+  "name": "@unicorn-cloud/security",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "JWT, ZTA, signatures, redaction"
+}

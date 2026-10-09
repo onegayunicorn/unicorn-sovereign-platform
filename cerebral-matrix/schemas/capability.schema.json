@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CapabilityLabel",
+  "type": "object",
+  "required": [
+    "module",
+    "classification",
+    "evidence_uri",
+    "last_reviewed"
+  ],
+  "properties": {
+    "module": {
+      "type": "string"
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "Demonstrated",
+        "Prototype",
+        "Simulated",
+        "Reported",
+        "Proposed",
+        "Implemented"
+      ]
+    },
+    "evidence_uri": {
+      "type": "string"
+    },
+    "last_reviewed": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

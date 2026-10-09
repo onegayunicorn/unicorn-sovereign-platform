@@ -1,0 +1,20 @@
+{
+  "dashboard": {
+    "title": "Security Events Dashboard",
+    "uid": "security_events",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Security events dashboard",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "unicorn_security_events_total"
+          }
+        ]
+      }
+    ],
+    "schemaVersion": 39,
+    "version": 1
+  }
+}

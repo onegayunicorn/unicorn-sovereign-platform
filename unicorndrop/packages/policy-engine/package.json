@@ -1,0 +1,7 @@
+{
+  "name": "@unicorndrop/policy-engine",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "DLP, retention, naming rules"
+}

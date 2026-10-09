@@ -1,0 +1,7 @@
+{
+  "name": "@matrix/identity",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "Key management + signing \u2014 hardware-backed where practical"
+}

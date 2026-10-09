@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DetectionEvent",
+  "type": "object",
+  "required": [
+    "event_id",
+    "node_id",
+    "detector_channel",
+    "timestamp_ps",
+    "basis_setting",
+    "raw_hash"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "detector_channel": {
+      "type": "integer"
+    },
+    "timestamp_ps": {
+      "type": "integer"
+    },
+    "basis_setting": {
+      "type": "string"
+    },
+    "raw_hash": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

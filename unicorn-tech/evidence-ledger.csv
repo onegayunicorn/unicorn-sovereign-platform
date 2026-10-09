@@ -1,0 +1,7 @@
+claim_id,claim,classification,evidence_uri,review_status,date
+q-001,Bell state simulation produces ~50/50 |00>/|11>,Simulated,quantum/experiments/software/chsh_result.json,not_reviewed,2026-10-08
+q-002,CHSH S-value approaches 2.828 in simulation,Simulated,quantum/experiments/software/chsh_result.json,not_reviewed,2026-10-08
+q-003,Negative controls do not violate classical bound,Simulated,quantum/experiments/software/negative_controls.json,not_reviewed,2026-10-08
+q-004,Kyber-1024 PQC key generation available where library present,Prototype,quantum/src/crypto/kyber_keys.py,not_reviewed,2026-10-08
+q-005,AES-256-GCM session encryption implemented,Demonstrated,quantum/src/crypto/symmetric.py,not_reviewed,2026-10-08
+q-006,Ed25519 signing implemented,Demonstrated,quantum/src/crypto/signatures.py,not_reviewed,2026-10-08

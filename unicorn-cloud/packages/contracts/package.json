@@ -1,0 +1,7 @@
+{
+  "name": "@unicorn-cloud/contracts",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "Zod/TS schemas \u2014 shared API + event types"
+}

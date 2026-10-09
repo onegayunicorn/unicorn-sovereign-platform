@@ -1,0 +1,1 @@
+// PQC crypto provider interface — ML-KEM-768, ML-DSA-65, SLH-DSA-SHA2-128s\nexport const MODULE_NAME = 'crypto-core';\n

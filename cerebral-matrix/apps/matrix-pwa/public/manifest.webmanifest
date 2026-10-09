@@ -1,0 +1,21 @@
+{
+  "name": "Cerebral Matrix OS",
+  "short_name": "MatrixOS",
+  "description": "Sovereign offline-first PWA for quantum, AI, and NPC control",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#7c3aed",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

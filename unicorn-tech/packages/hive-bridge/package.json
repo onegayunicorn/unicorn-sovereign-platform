@@ -1,0 +1,7 @@
+{
+  "name": "@unicorn-tech/hive-bridge",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "N02 Cognitive Hive bridge"
+}

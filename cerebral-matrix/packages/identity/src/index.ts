@@ -1,0 +1,1 @@
+// Key management + signing — hardware-backed where practical\nexport const MODULE_NAME = 'identity';\n

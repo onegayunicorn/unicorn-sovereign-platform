@@ -1,0 +1,7 @@
+{
+  "name": "@matrix/plugin-sdk",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "Plugin manifest + sandbox isolation"
+}

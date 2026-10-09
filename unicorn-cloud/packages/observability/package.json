@@ -1,0 +1,7 @@
+{
+  "name": "@unicorn-cloud/observability",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "Logging, metrics, tracing schemas"
+}

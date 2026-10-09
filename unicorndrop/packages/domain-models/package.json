@@ -1,0 +1,7 @@
+{
+  "name": "@unicorndrop/domain-models",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "Shared Zod/TS types"
+}

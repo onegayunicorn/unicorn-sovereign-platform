@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "NPCCharacterProfile",
+  "type": "object",
+  "required": [
+    "character_id",
+    "name",
+    "archetype",
+    "backstory",
+    "dialogue_style",
+    "fictional_disclaimer"
+  ],
+  "properties": {
+    "character_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "archetype": {
+      "type": "string"
+    },
+    "backstory": {
+      "type": "string"
+    },
+    "traits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "dialogue_style": {
+      "type": "string"
+    },
+    "fictional_disclaimer": {
+      "type": "string"
+    },
+    "allowed_topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "forbidden_topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

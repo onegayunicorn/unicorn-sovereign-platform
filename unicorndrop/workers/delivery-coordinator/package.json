@@ -1,0 +1,6 @@
+{
+  "name": "@unicorndrop/delivery-coordinator",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Fan-out + atomic commit + deduplication"
+}

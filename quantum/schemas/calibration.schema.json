@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Calibration",
+  "type": "object",
+  "required": [
+    "calibration_id",
+    "node_id",
+    "timestamp",
+    "detector_efficiency",
+    "dark_count_rate_hz",
+    "timing_jitter_ps",
+    "operator"
+  ],
+  "properties": {
+    "calibration_id": {
+      "type": "string"
+    },
+    "node_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "number"
+    },
+    "detector_efficiency": {
+      "type": "number"
+    },
+    "dark_count_rate_hz": {
+      "type": "number"
+    },
+    "timing_jitter_ps": {
+      "type": "number"
+    },
+    "operator": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

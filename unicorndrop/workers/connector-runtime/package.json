@@ -1,0 +1,6 @@
+{
+  "name": "@unicorndrop/connector-runtime",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "S3 / Azure Blob / GCS adapters"
+}

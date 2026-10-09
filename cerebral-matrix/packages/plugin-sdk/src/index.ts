@@ -1,0 +1,1 @@
+// Plugin manifest + sandbox isolation\nexport const MODULE_NAME = 'plugin-sdk';\n

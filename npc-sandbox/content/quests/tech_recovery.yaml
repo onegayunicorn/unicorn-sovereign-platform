@@ -1,0 +1,12 @@
+quest_id: tech_recovery
+title: "Tech Recovery"
+description: "Recover lost calibration data from the old lab bench."
+prerequisites: [first_meeting]
+stages:
+  - id: accept
+    npc_line: "My old calibration logs got corrupted. If you can recover them from the backup node, I'll show you how the photonic source works."
+  - id: recover
+    objective: "Find the calibration backup in the storage node."
+  - id: complete
+    npc_line: "You actually found them. Impressive. Alright — lesson one: never trust a coincidence window you didn't measure yourself."
+    reward: {skill_unlock: photonic_calibration}

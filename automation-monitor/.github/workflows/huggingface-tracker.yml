@@ -1,0 +1,13 @@
+name: HuggingFace Model Tracker
+on:
+  schedule:
+    - cron: '0 12 * * *'
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r automation-monitor/requirements.txt
+      - run: python -c "from automation_monitor.src.huggingface_tracker import search_models; import json; cfg=json.load(open('automation-monitor/config/hf_config.json')); print(json.dumps(search_models(cfg['keywords']), indent=2)[:5000])"

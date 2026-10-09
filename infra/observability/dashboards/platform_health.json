@@ -1,0 +1,20 @@
+{
+  "dashboard": {
+    "title": "Grafana Platform Health Dashboard",
+    "uid": "platform_health",
+    "panels": [
+      {
+        "id": 1,
+        "title": "Grafana platform health dashboard",
+        "type": "timeseries",
+        "targets": [
+          {
+            "expr": "unicorn_platform_health_total"
+          }
+        ]
+      }
+    ],
+    "schemaVersion": 39,
+    "version": 1
+  }
+}

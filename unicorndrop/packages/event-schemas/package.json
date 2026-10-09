@@ -1,0 +1,7 @@
+{
+  "name": "@unicorndrop/event-schemas",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "AsyncAPI webhook + internal event schemas"
+}

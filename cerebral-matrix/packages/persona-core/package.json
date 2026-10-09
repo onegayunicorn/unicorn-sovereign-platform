@@ -1,0 +1,7 @@
+{
+  "name": "@matrix/persona-core",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "C-137 Lab Scientist persona (original fictional character)"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "@matrix/npc-runtime",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "FSM + memory scopes \u2014 NPC behavior engine"
+}

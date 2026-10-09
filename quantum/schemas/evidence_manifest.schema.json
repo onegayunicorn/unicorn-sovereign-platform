@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "EvidenceManifest",
+  "type": "object",
+  "required": [
+    "experiment_id",
+    "node_ids",
+    "source_format",
+    "circuit_checksum",
+    "backend",
+    "shots",
+    "classification",
+    "result_artifact_uri",
+    "independent_review_status"
+  ],
+  "properties": {
+    "experiment_id": {
+      "type": "string"
+    },
+    "node_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_format": {
+      "type": "string"
+    },
+    "circuit_checksum": {
+      "type": "string"
+    },
+    "backend": {
+      "type": "string"
+    },
+    "shots": {
+      "type": "integer"
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "Demonstrated",
+        "Prototype",
+        "Simulated",
+        "Reported",
+        "Proposed"
+      ]
+    },
+    "result_artifact_uri": {
+      "type": "string"
+    },
+    "independent_review_status": {
+      "type": "string",
+      "enum": [
+        "not_reviewed",
+        "in_progress",
+        "passed",
+        "failed",
+        "conditional"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

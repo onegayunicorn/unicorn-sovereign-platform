@@ -1,0 +1,7 @@
+{
+  "name": "@unicorndrop/identity",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "OIDC/SAML, MFA, SCIM, API keys"
+}

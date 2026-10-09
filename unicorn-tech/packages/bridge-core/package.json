@@ -1,0 +1,7 @@
+{
+  "name": "@unicorn-tech/bridge-core",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "Common fetch/auth/retry utilities"
+}

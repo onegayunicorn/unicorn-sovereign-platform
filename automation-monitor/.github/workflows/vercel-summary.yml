@@ -1,0 +1,17 @@
+name: Vercel Deployment Summary
+on:
+  schedule:
+    - cron: '0 13 * * *'
+  repository_dispatch:
+    types: [vercel-deployment]
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -r automation-monitor/requirements.txt
+      - run: python -c "from automation_monitor.src.vercel_summarizer import get_deployments; import json; cfg=json.load(open('automation-monitor/config/vercel_projects.json')); [print(json.dumps(get_deployments(p), indent=2)[:2000]) for p in cfg['projects']]"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}

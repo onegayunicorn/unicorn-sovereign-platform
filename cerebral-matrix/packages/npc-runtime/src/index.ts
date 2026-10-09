@@ -1,0 +1,1 @@
+// FSM + memory scopes — NPC behavior engine\nexport const MODULE_NAME = 'npc-runtime';\n

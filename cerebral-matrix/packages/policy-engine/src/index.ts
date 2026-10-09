@@ -1,0 +1,1 @@
+// Permission + network rules — zero-trust policy evaluation\nexport const MODULE_NAME = 'policy-engine';\n

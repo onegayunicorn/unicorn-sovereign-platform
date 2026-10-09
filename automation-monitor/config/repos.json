@@ -1,0 +1,7 @@
+{
+  "repos": [
+    "onegayunicorn/quantum-sovereign-grounded",
+    "onegayunicorn/unicorn-sovereign-platform"
+  ],
+  "check_interval_hours": 1
+}

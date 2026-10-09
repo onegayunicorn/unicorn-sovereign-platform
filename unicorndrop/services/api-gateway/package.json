@@ -1,0 +1,7 @@
+{
+  "name": "@unicorndrop/api-gateway",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "description": "Auth, rate limits, idempotency, routing"
+}

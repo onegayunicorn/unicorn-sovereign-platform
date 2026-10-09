@@ -1,0 +1,12 @@
+scenario_id: 01_first_meeting
+character_id: c137_rick
+steps:
+  - player_input: "Hello?"
+    expected_npc_intent: smalltalk
+    expected_behavior_state: converse
+  - player_input: "I need a quest"
+    expected_npc_intent: quest
+    expected_behavior_state: quest
+  - player_input: "Goodbye"
+    expected_npc_intent: farewell
+    expected_behavior_state: idle

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProjectManifest",
+  "type": "object",
+  "required": [
+    "project_id",
+    "name",
+    "version",
+    "modules",
+    "capability_labels",
+    "pqc_algorithm"
+  ],
+  "properties": {
+    "project_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "modules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "capability_labels": {
+      "type": "object"
+    },
+    "pqc_algorithm": {
+      "type": "string",
+      "enum": [
+        "ML-KEM-768",
+        "ML-DSA-65",
+        "SLH-DSA-SHA2-128s",
+        "HYBRID"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
