@@ -1,0 +1,27 @@
+{
+  "jobId": "8f54979c-b4cf-46ad-bd39-34896e320001",
+  "correlationId": "sovereign-bell-0001",
+  "tenantId": "unicorndrop-demo",
+  "workspaceId": "phase1-validation",
+  "circuitId": "bell-state-v1",
+  "status": "approved",
+  "backend": {
+    "provider": "qps",
+    "target": "simulator-01",
+    "region": "eu-only"
+  },
+  "policy": {
+    "jurisdiction": "EU",
+    "dataClassification": "internal",
+    "approved": true,
+    "decisionReason": "Within EU jurisdiction, internal data — auto-approved"
+  },
+  "execution": {
+    "shots": 1024,
+    "priority": 5
+  },
+  "submittedAt": "2026-10-09T04:00:00Z",
+  "startedAt": "2026-10-09T04:00:02Z",
+  "completedAt": "2026-10-09T04:00:03Z",
+  "createdBy": "tyrone@sovereign.local"
+}

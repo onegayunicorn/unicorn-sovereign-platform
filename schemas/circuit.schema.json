@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unicorndrop.sovereign/schemas/circuit.schema.json",
+  "title": "QuantumCircuit",
+  "description": "Shared contract for a quantum circuit definition exchanged between Unicorndrop Cloud and QPS.",
+  "type": "object",
+  "required": ["circuitId", "name", "format", "content", "hash", "createdAt"],
+  "additionalProperties": false,
+  "properties": {
+    "circuitId": { "type": "string" },
+    "name": { "type": "string" },
+    "version": { "type": "string" },
+    "format": {
+      "type": "string",
+      "enum": ["openqasm2", "openqasm3", "qir", "quil", "cirq-json"]
+    },
+    "qubitCount": { "type": "integer", "minimum": 1 },
+    "depth": { "type": "integer", "minimum": 0 },
+    "content": {
+      "type": "string",
+      "description": "The circuit program body in the declared format."
+    },
+    "hash": {
+      "type": "string",
+      "description": "Content hash, e.g. sha256:<hex>."
+    },
+    "signature": { "type": "string" },
+    "createdBy": { "type": "string" },
+    "createdAt": { "type": "string", "format": "date-time" }
+  }
+}

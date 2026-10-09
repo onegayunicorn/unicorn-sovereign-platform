@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unicorn-contracts"
+version = "1.0.0"
+description = "Shared Pydantic models — Unicorndrop ↔ QPS"
+requires-python = ">=3.12"
+dependencies = [
+  "pydantic>=2.10.0",
+  "jsonschema>=4.23.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["models*"]

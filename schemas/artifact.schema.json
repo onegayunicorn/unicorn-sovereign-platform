@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unicorndrop.sovereign/schemas/artifact.schema.json",
+  "title": "Artifact",
+  "description": "Shared contract for a job-produced artifact (result, compiled circuit, attestation, evidence package, etc.).",
+  "type": "object",
+  "required": ["artifactId", "jobId", "artifactType", "storageUri", "hash", "createdAt"],
+  "additionalProperties": false,
+  "properties": {
+    "artifactId": { "type": "string" },
+    "jobId": { "type": "string" },
+    "artifactType": {
+      "type": "string",
+      "enum": [
+        "circuit",
+        "compiled-circuit",
+        "result",
+        "histogram",
+        "simulation-output",
+        "attestation",
+        "audit-export",
+        "sbom",
+        "evidence-package"
+      ]
+    },
+    "storageUri": { "type": "string" },
+    "contentType": { "type": "string" },
+    "sizeBytes": { "type": "integer", "minimum": 0 },
+    "hash": { "type": "string" },
+    "encrypted": { "type": "boolean" },
+    "kmsKeyId": { "type": "string" },
+    "retentionDays": { "type": "integer", "minimum": 0 },
+    "createdAt": { "type": "string", "format": "date-time" }
+  }
+}

@@ -1,0 +1,50 @@
+name: Validate Shared Contracts
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'schemas/**'
+  pull_request:
+    branches: [main, master]
+    paths:
+      - 'schemas/**'
+
+jobs:
+  validate-typescript:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: cd schemas && pnpm install
+      - run: pnpm test
+        name: Validate Schemas & Fixtures
+
+  validate-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: cd schemas && python -m pip install -e ".[dev]"
+      - run: pytest tests/validate-python.py -v
+        name: Validate Pydantic Models & JSON Schema
+
+  check-correlation_chain:
+    needs: [validate-typescript, validate-python]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify audit chain has single correlationId
+        run: |
+          python3 -c "
+            import json
+            with open('schemas/fixtures/audit-event.lifecycle.json') as f:
+              events = json.load(f)
+            corr = set(e['correlationId'] for e in events)
+            job = set(e['jobId'] for e in events)
+            assert len(corr) == 1, f'Multiple correlationIds: {corr}'
+            assert len(job) == 1, f'Multiple jobIds: {job}'
+            print(f'✅ Correlation chain verified: {corr.pop()} → {job.pop()}')
+          "

@@ -1,0 +1,12 @@
+{
+  "circuitId": "bell-state-v1",
+  "name": "Bell State |Φ⁺⟩",
+  "version": "1.0",
+  "format": "openqasm3",
+  "qubitCount": 2,
+  "depth": 2,
+  "content": "OPENQASM 3.0;\nqubit[2] q;\nbit[2] c;\nh q[0];\ncx q[0], q[1];\nc = measure q;",
+  "hash": "sha256:6a8c65d4e2f1b3a0c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3b2c1d0e1f2a3b4",
+  "createdBy": "tyrone@sovereign.local",
+  "createdAt": "2026-10-09T03:55:00Z"
+}

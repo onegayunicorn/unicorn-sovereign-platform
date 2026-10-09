@@ -1,0 +1,86 @@
+[
+  {
+    "eventId": "evt-001",
+    "correlationId": "sovereign-bell-0001",
+    "jobId": "8f54979c-b4cf-46ad-bd39-34896e320001",
+    "tenantId": "unicorndrop-demo",
+    "timestamp": "2026-10-09T04:00:00Z",
+    "eventType": "job-submitted",
+    "source": "unicorndrop",
+    "severity": "info",
+    "details": { "circuitId": "bell-state-v1", "submittedBy": "tyrone@sovereign.local" },
+    "signature": "sig:unicorndrop:abc123..."
+  },
+  {
+    "eventId": "evt-002",
+    "correlationId": "sovereign-bell-0001",
+    "jobId": "8f54979c-b4cf-46ad-bd39-34896e320001",
+    "tenantId": "unicorndrop-demo",
+    "timestamp": "2026-10-09T04:00:01Z",
+    "eventType": "policy-evaluated",
+    "source": "unicorndrop",
+    "severity": "info",
+    "details": { "jurisdiction": "EU", "classification": "internal", "decision": "approved" },
+    "signature": "sig:unicorndrop:def456..."
+  },
+  {
+    "eventId": "evt-003",
+    "correlationId": "sovereign-bell-0001",
+    "jobId": "8f54979c-b4cf-46ad-bd39-34896e320001",
+    "tenantId": "unicorndrop-demo",
+    "timestamp": "2026-10-09T04:00:01Z",
+    "eventType": "job-queued",
+    "source": "scheduler",
+    "severity": "info",
+    "details": { "queuePosition": 1, "backend": "simulator-01" },
+    "signature": "sig:qps:ghi789..."
+  },
+  {
+    "eventId": "evt-004",
+    "correlationId": "sovereign-bell-0001",
+    "jobId": "8f54979c-b4cf-46ad-bd39-34896e320001",
+    "tenantId": "unicorndrop-demo",
+    "timestamp": "2026-10-09T04:00:02Z",
+    "eventType": "execution-started",
+    "source": "qps",
+    "severity": "info",
+    "details": { "backend": "simulator-01", "shots": 1024 },
+    "signature": "sig:qps:jkl012..."
+  },
+  {
+    "eventId": "evt-005",
+    "correlationId": "sovereign-bell-0001",
+    "jobId": "8f54979c-b4cf-46ad-bd39-34896e320001",
+    "tenantId": "unicorndrop-demo",
+    "timestamp": "2026-10-09T04:00:03Z",
+    "eventType": "execution-completed",
+    "source": "qps",
+    "severity": "info",
+    "details": { "counts": { "00": 512, "11": 512 }, "executionTimeMs": 14 },
+    "signature": "sig:qps:mno345..."
+  },
+  {
+    "eventId": "evt-006",
+    "correlationId": "sovereign-bell-0001",
+    "jobId": "8f54979c-b4cf-46ad-bd39-34896e320001",
+    "tenantId": "unicorndrop-demo",
+    "timestamp": "2026-10-09T04:00:03Z",
+    "eventType": "artifact-created",
+    "source": "qps",
+    "severity": "info",
+    "details": { "artifactId": "art-7f8d9c0b-123e-4567-a890-1bcdef234567", "type": "result" },
+    "signature": "sig:qps:pqr678..."
+  },
+  {
+    "eventId": "evt-007",
+    "correlationId": "sovereign-bell-0001",
+    "jobId": "8f54979c-b4cf-46ad-bd39-34896e320001",
+    "tenantId": "unicorndrop-demo",
+    "timestamp": "2026-10-09T04:00:04Z",
+    "eventType": "result-delivered",
+    "source": "unicorndrop",
+    "severity": "info",
+    "details": { "artifactStored": true, "retentionDays": 90 },
+    "signature": "sig:unicorndrop:stu901..."
+  }
+]

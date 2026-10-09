@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unicorndrop.sovereign/schemas/job.schema.json",
+  "title": "QuantumJob",
+  "description": "Shared contract for a quantum execution job exchanged between Unicorndrop Cloud and the Quantum Platform Suite (QPS).",
+  "type": "object",
+  "required": [
+    "jobId",
+    "correlationId",
+    "tenantId",
+    "circuitId",
+    "status",
+    "backend",
+    "policy",
+    "submittedAt"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "jobId": {
+      "type": "string",
+      "description": "Globally unique job identifier (UUID)."
+    },
+    "correlationId": {
+      "type": "string",
+      "description": "End-to-end correlation identifier tying a job to its full audit-event chain (G5 shared audit)."
+    },
+    "tenantId": {
+      "type": "string"
+    },
+    "workspaceId": {
+      "type": "string"
+    },
+    "circuitId": {
+      "type": "string",
+      "description": "Reference to the QuantumCircuit to execute."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "submitted",
+        "validated",
+        "approved",
+        "queued",
+        "executing",
+        "completed",
+        "failed",
+        "cancelled",
+        "rejected"
+      ]
+    },
+    "backend": {
+      "type": "object",
+      "required": ["provider", "target"],
+      "additionalProperties": false,
+      "properties": {
+        "provider": { "type": "string" },
+        "target": { "type": "string" },
+        "region": { "type": "string" }
+      }
+    },
+    "policy": {
+      "type": "object",
+      "required": ["jurisdiction", "dataClassification", "approved"],
+      "additionalProperties": false,
+      "properties": {
+        "jurisdiction": { "type": "string" },
+        "dataClassification": {
+          "type": "string",
+          "enum": ["public", "internal", "confidential", "regulated"]
+        },
+        "approved": { "type": "boolean" },
+        "decisionReason": { "type": "string" }
+      }
+    },
+    "execution": {
+      "type": "object",
+      "required": ["shots"],
+      "additionalProperties": false,
+      "properties": {
+        "shots": { "type": "integer", "minimum": 1 },
+        "priority": { "type": "integer", "minimum": 1, "maximum": 10 }
+      }
+    },
+    "submittedAt": { "type": "string", "format": "date-time" },
+    "startedAt": { "type": "string", "format": "date-time" },
+    "completedAt": { "type": "string", "format": "date-time" },
+    "createdBy": { "type": "string" }
+  }
+}

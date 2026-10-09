@@ -1,0 +1,13 @@
+{
+  "artifactId": "art-7f8d9c0b-123e-4567-a890-1bcdef234567",
+  "jobId": "8f54979c-b4cf-46ad-bd39-34896e320001",
+  "artifactType": "result",
+  "storageUri": "s3://sovereign-eu-jobs/results/8f54979c-b4cf-46ad-bd39-34896e320001.json",
+  "contentType": "application/json",
+  "sizeBytes": 218,
+  "hash": "sha256:8c7d6e5f4a3b2a1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f2a3b5",
+  "encrypted": true,
+  "kmsKeyId": "cmk-eu-001",
+  "retentionDays": 90,
+  "createdAt": "2026-10-09T04:00:03Z"
+}

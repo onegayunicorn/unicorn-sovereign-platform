@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://unicorndrop.sovereign/schemas/audit-event.schema.json",
+  "title": "AuditEvent",
+  "description": "Shared contract for a single immutable audit event. Events sharing a correlationId form one end-to-end job lifecycle chain.",
+  "type": "object",
+  "required": [
+    "eventId",
+    "correlationId",
+    "jobId",
+    "timestamp",
+    "eventType",
+    "source",
+    "severity"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "eventId": { "type": "string" },
+    "correlationId": { "type": "string" },
+    "jobId": { "type": "string" },
+    "tenantId": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "eventType": {
+      "type": "string",
+      "enum": [
+        "job-submitted",
+        "policy-evaluated",
+        "job-approved",
+        "job-rejected",
+        "job-queued",
+        "execution-started",
+        "execution-completed",
+        "execution-failed",
+        "artifact-created",
+        "attestation-verified",
+        "result-delivered"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "enum": ["unicorndrop", "qps", "scheduler", "gateway", "kms", "operator"]
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["info", "warning", "error", "critical"]
+    },
+    "details": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "signature": { "type": "string" }
+  }
+}
