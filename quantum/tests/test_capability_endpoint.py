@@ -177,6 +177,19 @@ def test_duplicate_evidence_records_fail_closed(tmp_path, monkeypatch):
     assert report["status"] == "UNKNOWN"
 
 
+def test_registry_module_paths_match_platform_layout(monkeypatch):
+    monkeypatch.setenv("SOVEREIGN_SOURCE_REVISION", REVISION)
+    monkeypatch.setattr(capabilities, "_registered_module_available", lambda module: module in {
+        "packages.providers.simulator.statevector",
+        "packages.execution.state_machine",
+    })
+    report = capabilities.build_capability_report(NOW)
+    assert {item["payload"]["module"] for item in report["capabilities"]} == {
+        "packages.providers.simulator.statevector",
+        "packages.execution.state_machine",
+    }
+
+
 def test_only_registered_capabilities_are_emitted(monkeypatch):
     monkeypatch.setenv("SOVEREIGN_SOURCE_REVISION", REVISION)
     report = capabilities.build_capability_report(NOW)

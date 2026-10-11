@@ -32,7 +32,7 @@ DEFAULT_FRESHNESS_SECONDS = 300
 REGISTRY = (
     {
         "capability_id": "quantum.state_vector_simulator",
-        "module": "packages.provider.simulator.state_vector",
+        "module": "packages.providers.simulator.statevector",
         "declared_maturity": "SIMULATED",
     },
     {
