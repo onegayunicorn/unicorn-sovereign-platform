@@ -31,7 +31,7 @@ A future adapter may expose a read-only capability report:
 }
 ```
 
-This is a contract example, not a claim that the endpoint currently exists. The adapter must only report verified local information and must not return a healthy status when checks fail or evidence is stale.
+The Platform branch now contains a prototype at GET /api/v1/capabilities/. It defaults to UNKNOWN and omits individual capability event claims if an immutable source revision is unavailable. Its optional local evidence-file adapter is not a signed attestation; live interoperability and independent evidence verification remain pending.
 
 ## Safety requirements
 
