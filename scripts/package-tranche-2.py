@@ -98,10 +98,17 @@ def main() -> None:
                 shutil.copy2(src, dst)
             else:
                 raise FileNotFoundError(f"Required package source missing: {item}")
+        # Fixed timestamps and permissions make the ZIP byte-for-byte reproducible.
         with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:
             for file in sorted(stage.rglob("*")):
                 if file.is_file():
-                    zf.write(file, file.relative_to(stage.parent))
+                    info = zipfile.ZipInfo(
+                        str(file.relative_to(stage.parent)).replace("\\", "/"),
+                        date_time=(2026, 1, 1, 0, 0, 0),
+                    )
+                    info.compress_type = zipfile.ZIP_DEFLATED
+                    info.external_attr = 0o100644 << 16
+                    zf.writestr(info, file.read_bytes(), compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
     sidecar = archive.with_suffix(archive.suffix + ".sha256")
     sidecar.write_text(f"{digest}  {archive.name}\n", encoding="utf-8")
