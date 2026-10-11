@@ -124,9 +124,11 @@ def _evaluate(entry: dict[str, str], evidence: dict[str, Any] | None,
             and REVISION_RE.fullmatch(str(source_revision or "")) is not None
             and evidence_time is not None
             and age is not None
-            and -30 <= age <= freshness
             and valid_freshness
+            and -30 <= age <= freshness
+            and isinstance(evidence_status, str)
             and evidence_status in HEALTH_VALUES
+            and isinstance(evidence_classification, str)
             and evidence_classification in CLASSIFICATIONS
             and isinstance(uri, str)
             and 1 <= len(uri) <= 2048
@@ -182,6 +184,21 @@ def build_capability_report(now: datetime | None = None) -> dict[str, Any]:
         aggregate_status = "DEGRADED"
     else:
         aggregate_status = "UNKNOWN"
+
+    # The contract requires revision-linked provenance for capability claims.
+    # Without an immutable source revision, publish UNKNOWN summary only and
+    # omit per-capability event claims rather than inventing provenance.
+    if revision is None:
+        return {
+            "schema_version": "1.0",
+            "source": SOURCE,
+            "observed_at": _iso_z(now),
+            "source_revision": None,
+            "status": "UNKNOWN",
+            "reason": "source_revision_unavailable",
+            "registered_capability_count": len(REGISTRY),
+            "capabilities": [],
+        }
 
     events = []
     for item in reports:
