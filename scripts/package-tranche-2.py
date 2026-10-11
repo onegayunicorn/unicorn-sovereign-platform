@@ -15,6 +15,9 @@ SOURCE_PATHS = (
     "unicorn-quantum",
     "quantum/tests/test_capability_endpoint.py",
     "schemas/sovereign-event-v1.schema.json",
+    "pyproject.toml",
+    "ai-orchestration/src/tools/permissions.py",
+    "docs/tranche-2-capability-endpoint.md",
 )
 
 README = """# Unicorn Platform Tranche #2 — Capability Reporting
