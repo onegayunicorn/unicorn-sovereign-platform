@@ -47,4 +47,4 @@ Canonical labels: **PROPOSED / SIMULATED / DEMONSTRATED / MEASURED / UNVERIFIED 
 - [Photonic Codex](https://github.com/onegayunicorn/photonic-codex) — local operations, dashboard, events, and provenance.
 - [Quantum Multiversal Nexus](https://github.com/onegayunicorn/quantum-multiversal-nexus) — ecosystem manifest and read-only status presentation.
 
-Live integration is not established merely by adding these links or contract documents.
+The FastAPI prototype exposes GET /api/v1/capabilities/ from unicorn-quantum/apps/api/main.py. It defaults to UNKNOWN and omits per-capability event claims until an immutable source revision is configured. Current evidence-file handling is a local prototype, not a signed attestation. Cross-repository live integration is not established merely by adding links or contract documents.
