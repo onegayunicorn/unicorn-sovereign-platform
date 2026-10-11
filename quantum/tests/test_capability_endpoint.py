@@ -50,9 +50,10 @@ def test_endpoint_is_read_only_and_defaults_unknown():
     report = response.json()
     assert report["status"] == "UNKNOWN"
     assert report["source"] == "unicorn-sovereign-platform"
-    assert report["capabilities"]
-    assert all(item["payload"]["status"] == "UNKNOWN" for item in report["capabilities"])
-    assert all(item["classification"] == "UNVERIFIED" for item in report["capabilities"])
+    # No per-capability claim is emitted without an immutable source revision.
+    assert report["capabilities"] == []
+    assert report["registered_capability_count"] == len(capabilities.REGISTRY)
+    assert report["reason"] == "source_revision_unavailable"
     assert client.post("/api/v1/capabilities/").status_code == 405
     assert client.put("/api/v1/capabilities/").status_code == 405
     assert client.delete("/api/v1/capabilities/").status_code == 405
@@ -78,7 +79,8 @@ def test_missing_revision_fails_closed(tmp_path, monkeypatch):
     monkeypatch.setenv("SOVEREIGN_CAPABILITY_EVIDENCE_FILE", write_evidence(tmp_path, records))
     report = capabilities.build_capability_report(NOW)
     assert report["status"] == "UNKNOWN"
-    assert all(event["payload"]["status"] == "UNKNOWN" for event in report["capabilities"])
+    assert report["capabilities"] == []
+    assert report["reason"] == "source_revision_unavailable"
 
 
 def test_stale_evidence_fails_closed(tmp_path, monkeypatch):
