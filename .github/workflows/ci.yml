@@ -29,6 +29,11 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: python scripts/package-tranche-2.py
+      - name: Verify extracted deliverable
+        run: |
+          mkdir -p /tmp/tranche2-package-check
+          unzip -q dist/unicorn-platform-tranche-2-capabilities-v1.0.zip -d /tmp/tranche2-package-check
+          bash /tmp/tranche2-package-check/unicorn-platform-tranche-2-capabilities-v1.0/verify.sh
       - uses: actions/upload-artifact@v4
         with:
           name: unicorn-platform-tranche-2-capabilities-v1.0
