@@ -130,6 +130,7 @@ def _evaluate(entry: dict[str, str], evidence: dict[str, Any] | None,
             and evidence_status in HEALTH_VALUES
             and isinstance(evidence_classification, str)
             and evidence_classification in CLASSIFICATIONS
+            and not (evidence_status == "HEALTHY" and evidence_classification in {"PROPOSED", "UNVERIFIED"})
             and isinstance(uri, str)
             and 1 <= len(uri) <= 2048
         ):
