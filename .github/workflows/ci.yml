@@ -20,3 +20,19 @@ jobs:
       - uses: actions/setup-node@v4
         with: {node-version: "22"}
       - run: node scripts/validate-all.mjs
+
+  package-tranche-2:
+    needs: [python, structure]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: python scripts/package-tranche-2.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: unicorn-platform-tranche-2-capabilities-v1.0
+          path: |
+            dist/unicorn-platform-tranche-2-capabilities-v1.0.zip
+            dist/unicorn-platform-tranche-2-capabilities-v1.0.zip.sha256
+          if-no-files-found: error
