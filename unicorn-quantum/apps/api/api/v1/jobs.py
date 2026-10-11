@@ -1,8 +1,8 @@
 """Job submission + status endpoints."""
 from fastapi import APIRouter, HTTPException
 from typing import Dict, Optional
-from ....packages.domain.job import JobModel, JobStatus
-from ....packages.execution.idempotency import IdempotencyStore
+from packages.domain.job import JobModel, JobStatus
+from packages.execution.idempotency import IdempotencyStore
 import time, uuid
 
 router = APIRouter()
