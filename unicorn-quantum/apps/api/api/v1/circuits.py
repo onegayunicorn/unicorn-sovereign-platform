@@ -1,7 +1,7 @@
 """Circuit CRUD endpoints."""
 from fastapi import APIRouter, HTTPException
 from typing import Dict
-from ....packages.domain.circuit import CircuitModel
+from packages.domain.circuit import CircuitModel
 
 router = APIRouter()
 _store: Dict[str, CircuitModel] = {}
