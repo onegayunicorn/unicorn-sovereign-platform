@@ -169,7 +169,8 @@ def test_duplicate_evidence_records_fail_closed(tmp_path, monkeypatch):
     assert report["status"] == "UNKNOWN"
 
 
-def test_only_registered_capabilities_are_emitted():
+def test_only_registered_capabilities_are_emitted(monkeypatch):
+    monkeypatch.setenv("SOVEREIGN_SOURCE_REVISION", REVISION)
     report = capabilities.build_capability_report(NOW)
     assert {event["payload"]["capability_id"] for event in report["capabilities"]} == {
         entry["capability_id"] for entry in capabilities.REGISTRY
