@@ -6,6 +6,7 @@ from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
+from jsonschema import Draft202012Validator
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PLATFORM_ROOT = REPO_ROOT / "unicorn-quantum"
@@ -148,6 +149,7 @@ def test_event_envelopes_match_shared_contract(tmp_path, monkeypatch):
     allowed_sources = set(schema["properties"]["source"]["enum"])
     allowed_types = set(schema["properties"]["type"]["enum"])
     allowed_classes = set(schema["properties"]["classification"]["enum"])
+    validator = Draft202012Validator(schema, format_checker=Draft202012Validator.FORMAT_CHECKER)
     for event in report["capabilities"]:
         assert required.issubset(event)
         assert set(event).issubset(required | {"correlation_id", "provenance"})
@@ -158,6 +160,12 @@ def test_event_envelopes_match_shared_contract(tmp_path, monkeypatch):
         assert event["timestamp"].endswith("Z")
         assert event["provenance"]["repository"] == "onegayunicorn/unicorn-sovereign-platform"
         assert len(event["provenance"]["revision"]) == 40
+        assert list(validator.iter_errors(event)) == []
+
+    # The actual shared schema must reject a non-canonical evidence label.
+    invalid_event = dict(report["capabilities"][0])
+    invalid_event["classification"] = "PROTOTYPE"
+    assert list(validator.iter_errors(invalid_event))
 
 
 def test_duplicate_evidence_records_fail_closed(tmp_path, monkeypatch):
