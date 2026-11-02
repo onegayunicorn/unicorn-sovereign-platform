@@ -1,7 +1,7 @@
 """Tool permission enforcement."""
 from __future__ import annotations
 from .registry import ToolRegistry, ToolSpec
-from ..agents.registry import AgentSpec
+from agents.registry import AgentSpec
 
 class PermissionDenied(Exception):
     pass
